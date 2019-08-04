@@ -1,0 +1,23 @@
+{
+  "name": "vue-plugin-use-router",
+  "version": "1.0.0",
+  "description": "function api with vue router",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cobbcheng/vue-plugin-use-router.git"
+  },
+  "author": "cobb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cobbcheng/vue-plugin-use-router/issues"
+  },
+  "homepage": "https://github.com/cobbcheng/vue-plugin-use-router#readme",
+  "dependencies": {
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.7"
+  }
+}

@@ -9,6 +9,7 @@ function install(Vue) {
         beforeCreate: initRouter
     });
 }
+exports.install = install;
 function initRouter() {
     var vm = this;
     Object.defineProperty(vRouter, 'router', {
@@ -25,4 +26,3 @@ function initRouter() {
 exports.useRouter = function () {
     return vRouter;
 };
-exports.default = install;

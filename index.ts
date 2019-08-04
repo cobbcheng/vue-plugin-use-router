@@ -6,7 +6,7 @@ const vRouter = {
   route: {}
 }
 
-function install (Vue: VueConstructor) {
+export function install (Vue: VueConstructor) {
   Vue.mixin({
     beforeCreate: initRouter
   })
@@ -31,5 +31,3 @@ function initRouter (this: VueInstance) {
 export const useRouter = () => {
   return vRouter
 }
-
-export default install

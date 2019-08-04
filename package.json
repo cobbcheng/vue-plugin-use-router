@@ -16,7 +16,7 @@
     "url": "https://github.com/cobbcheng/vue-plugin-use-router/issues"
   },
   "homepage": "https://github.com/cobbcheng/vue-plugin-use-router#readme",
-  "dependencies": {
+  "peerDependencies": {
     "vue": "^2.6.10",
     "vue-router": "^3.0.7"
   }

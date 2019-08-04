@@ -8,7 +8,9 @@ vue-router
 ### install
 
 ```javascript
-Vue.use('vue-router').use('vue-plugin-use-router')
+import { plugin } from 'vue-plugin-use-router'
+
+Vue.use('vue-router').use(plugin)
 ```
 
 ### usage

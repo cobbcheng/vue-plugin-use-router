@@ -6,7 +6,7 @@ const vRouter = {
   route: {}
 }
 
-export function install (Vue: VueConstructor) {
+export function plugin (Vue: VueConstructor) {
   Vue.mixin({
     beforeCreate: initRouter
   })

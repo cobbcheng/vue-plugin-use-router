@@ -4,12 +4,12 @@ var vRouter = {
     router: {},
     route: {}
 };
-function install(Vue) {
+function plugin(Vue) {
     Vue.mixin({
         beforeCreate: initRouter
     });
 }
-exports.install = install;
+exports.plugin = plugin;
 function initRouter() {
     var vm = this;
     Object.defineProperty(vRouter, 'router', {

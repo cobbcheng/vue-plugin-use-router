@@ -26,5 +26,7 @@ console.log(route.params.id)
 console.log(route.query.channel)
 ```
 
+### tips
 
+not publish on npm
 

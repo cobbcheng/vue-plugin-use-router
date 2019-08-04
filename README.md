@@ -25,8 +25,3 @@ router.push('/a/b')
 console.log(route.params.id)
 console.log(route.query.channel)
 ```
-
-### tips
-
-have not published on npm
-

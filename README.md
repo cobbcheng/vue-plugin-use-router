@@ -28,5 +28,5 @@ console.log(route.query.channel)
 
 ### tips
 
-not publish on npm
+have not published on npm
 

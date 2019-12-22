@@ -1,10 +1,12 @@
 import VueInstance, { VueConstructor } from 'vue'
 import VueRouter, { Route } from 'vue-router'
 
-let vRouter: {
+interface RouterBox {
   router: VueRouter,
   route: Route
 }
+
+let vRouter: RouterBox
 
 export function plugin (Vue: VueConstructor) {
   Vue.mixin({

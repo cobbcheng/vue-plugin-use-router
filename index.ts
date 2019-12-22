@@ -1,7 +1,7 @@
 import VueInstance, { VueConstructor } from 'vue'
 import Router, { Route } from 'vue-router'
 
-let vRouter = {
+const vRouter = {
   router: new Router,
   route: new Router().currentRoute
 }

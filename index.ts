@@ -1,9 +1,9 @@
 import VueInstance, { VueConstructor } from 'vue'
-import VueRouter, { Route } from 'vue-router'
+import Router, { Route } from 'vue-router'
 
-let vRouter: {
-  router: VueRouter,
-  route: Route
+let vRouter = {
+  router: new Router,
+  route: new Router().currentRoute
 }
 
 export function plugin (Vue: VueConstructor) {
@@ -16,7 +16,7 @@ function initRouter (this: VueInstance) {
   const vm = this
 
   Object.defineProperty(vRouter, 'router', {
-    get (): VueRouter {
+    get (): Router {
       return vm.$router
     }
   })

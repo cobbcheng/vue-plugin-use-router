@@ -1,6 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var vRouter;
+var vRouter = {
+    router: {},
+    route: {}
+};
 function plugin(Vue) {
     Vue.mixin({
         beforeCreate: initRouter

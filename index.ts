@@ -1,9 +1,9 @@
 import VueInstance, { VueConstructor } from 'vue'
 import VueRouter, { Route } from 'vue-router'
 
-const vRouter = {
-  router: {},
-  route: {}
+let vRouter: {
+  router: VueRouter,
+  route: Route
 }
 
 export function plugin (Vue: VueConstructor) {

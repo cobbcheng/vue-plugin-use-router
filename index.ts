@@ -6,9 +6,9 @@ interface RouterBox {
   route: Route
 }
 
-const vRouter: RouterBox = {
-  router: new VueRouter(),
-  route: new VueRouter().currentRoute
+const vRouter = {
+  router: {},
+  route: {}
 }
 
 export function plugin (Vue: VueConstructor) {
@@ -19,7 +19,6 @@ export function plugin (Vue: VueConstructor) {
 
 function initRouter (this: VueInstance) {
   const vm = this
-
   Object.defineProperty(vRouter, 'router', {
     get (): VueRouter {
       return vm.$router

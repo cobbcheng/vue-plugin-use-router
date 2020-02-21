@@ -1,37 +1,26 @@
 import VueInstance, { VueConstructor } from 'vue'
 import VueRouter, { Route } from 'vue-router'
+import { provide, inject, InjectionKey } from '@vue/composition-api'
 
-interface RouterBox {
-  router: VueRouter,
-  route: Route
+class GetRouter {
+  readonly router: VueRouter
+  readonly route: Route
+
+  constructor (vm: VueInstance) {
+    this.router = vm.$router
+    this.route = vm.$route
+  }
 }
 
-const vRouter = {
-  router: {},
-  route: {}
-}
+const vRouter: InjectionKey<GetRouter> = Symbol()
 
 export function plugin (Vue: VueConstructor) {
   Vue.mixin({
-    beforeCreate: initRouter
-  })
-}
-
-function initRouter (this: VueInstance) {
-  const vm = this
-  Object.defineProperty(vRouter, 'router', {
-    get (): VueRouter {
-      return vm.$router
-    }
-  })
-
-  Object.defineProperty(vRouter, 'route', {
-    get (): Route {
-      return vm.$route
+    beforeCreate () {
+      const vm = this
+      provide(vRouter, new GetRouter(vm))
     }
   })
 }
 
-export const useRouter = () => {
-  return vRouter
-}
+export const useRouter = () => inject(vRouter)

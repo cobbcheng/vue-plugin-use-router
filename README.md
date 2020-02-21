@@ -4,19 +4,12 @@ use vue-router like vue 3.0 api
 ### require
 
 vue-router
-
-### install
-
-```javascript
-import { plugin } from 'vue-plugin-use-router'
-
-Vue.use('vue-router').use(plugin)
-```
+@vue/composition-api
 
 ### usage
 
 ```javascript
-import { useRouter } from 'vue-plugin-use-router'
+import useRouter from 'vue-plugin-use-router'
 
 const { router, route } = useRouter()
 

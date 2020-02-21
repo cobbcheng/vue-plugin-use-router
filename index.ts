@@ -1,6 +1,6 @@
-import VueInstance, { VueConstructor } from 'vue'
+import VueInstance from 'vue'
 import VueRouter, { Route } from 'vue-router'
-import { provide, inject, InjectionKey } from '@vue/composition-api'
+import { getCurrentInstance } from '@vue/composition-api'
 
 class GetRouter {
   readonly router: VueRouter
@@ -12,15 +12,9 @@ class GetRouter {
   }
 }
 
-const vRouter: InjectionKey<GetRouter> = Symbol()
-
-export function plugin (Vue: VueConstructor) {
-  Vue.mixin({
-    beforeCreate () {
-      const vm = this
-      provide(vRouter, new GetRouter(vm))
-    }
-  })
+function useRouter () {
+  const vm = getCurrentInstance() as any
+  return new GetRouter(vm)
 }
 
-export const useRouter = () => inject(vRouter)
+export default useRouter
